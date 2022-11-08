@@ -1,0 +1,26 @@
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: darken($background, 5%);
+    >nav{
+        
+        >button{
+            @extend %boton-navbar
+        }
+    }
+    >a{
+        img{
+            height: 128px;
+        }
+    }
+    >div{
+        >button{
+            @extend %boton-navbar
+        }
+    }
+    .offcanvas{
+        background-color: $background
+    }
+}

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Personalizables{% endblock  %}
+{% block script %}
+<script defer src="{% static 'js/modal.js' %}"></script>
+{% endblock  %}
+{% block main %}
+<main id="personalizables"> 
+  <section>
+      <div>
+          <img src="{% static 'multimedia/fotos/index/productosPresentacion.jpg'%}" alt="">
+        </div>
+        <div>
+          <img src="{% static 'multimedia/logos/logo_general.png' %}" alt="">
+          <h2>Envios a todo el pais</h2>
+          <p>Despachamos nuestros productos a travez de correo argentino</p>
+        </div>
+  </section>
+  <section>
+      <h1>Personalizables</h1>
+      <p>El unico limite es tu imaginación</p>
+      <div>
+          <button type="button" id="llavero" >
+              <div>
+                <img src="{% static 'multimedia/fotos/personalizables/llavero.jpg' %}" alt="">
+              </div>
+              <div>
+                <strong>Llavero</strong>
+              </div>
+            </button>
+            <button type="button" id="luna" >
+              <div>
+                <img src="{% static 'multimedia/fotos/personalizables/PLunaConFoto.jpg' %}" alt="">
+              </div>
+              <div>
+                <strong>Luna con foto</strong>
+              </div>
+            </button>
+            <button type="button" id="mate">
+              <div>
+                <img src="{% static 'multimedia/fotos/personalizables/PMate.jpg' %}" alt="">
+              </div>
+              <div>
+                <strong>Mate</strong>
+              </div>
+            </button>
+      </div>
+      <article id="Modal">
+        <div>
+          <img src="{% static 'multimedia/logos/logo_general.png' %}" alt="">
+          <span>&times</span>
+        </div> 
+          <form action="">
+            <div id="preVisualizar">
+              <!-- <img src="" alt=""> -->
+            </div>
+            <div>
+              <label for="">Tipo</label>
+              <input type="text" id="tipo">
+            </div>
+            <div>
+              <label for="">Cantidad</label>
+              <input type="number" id="cantidad" min="1">
+            </div>
+            <div>
+              <label for="">Seleccionar archivo</label>
+              <input type="file" id="file" accept="image/*">
+            </div>
+          </form>
+        <div>panceta</div>
+      </article>
+
+  </section>
+</main>
+
+{% endblock %}

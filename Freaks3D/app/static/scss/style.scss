@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Flex:opsz,wght@8..144,700&display=swap');
+@import "base/var";
+@import "partials/extends";
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0
+}
+
+body{
+    background-color: $background
+}
+h1,h2,h3,h4,h5,h6,strong,a{
+    font-family: $font-H;
+}
+a{
+    text-decoration: none;
+}
+p,span,li,label{
+    font-family:$font-texto
+}
+
+button{
+    font-family:$font-boton
+}
+ul,ol,dl{
+    list-style-type: none;
+}
+
+@import "main/header";
+@import "main/index";
+@import "main/footer";
+@import "main/contacto";
+@import "main/productos";
+@import "main/personalizables";
+@import "main/modal";

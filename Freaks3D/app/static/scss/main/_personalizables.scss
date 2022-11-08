@@ -1,0 +1,125 @@
+#personalizables{
+    section{
+        margin: 128px auto;
+    }
+    section:nth-child(1){
+        position: relative;
+        height: 600px;
+        margin-top: 0;
+        div:first-child{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .4;
+            >img{
+                object-fit:cover;
+                width: 100%;
+                height: 600px;
+            }
+        }
+        div:last-child{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            >img{
+                width: 256px;
+            }
+            p{
+                color: $font-color;
+                width: 600px;
+                font-size: $f-small;
+            }
+        }
+    }
+    section:nth-child(2){
+        text-align: center;
+        >div{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            >button{
+                @extend %shadows1;
+                margin: 32px auto;
+                position: relative;
+                height: 256px;
+                width: 600px;
+                border: none;
+                border-radius: 16px;
+                cursor: pointer;
+                transition: all .3s;
+                &:hover{
+                    background-color: darken($background,15%);
+                }
+                div:first-child{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: .4;
+                    >img{
+                        object-fit:cover;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 16px;
+                    }
+                }
+                div:last-child{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    strong{
+                        color: $font-color;
+                        width: 600px;
+                        font-size: $f-big;
+                    }
+                }
+            }
+        }
+        .formulario-modal{
+            background-color: lighten($background, 5%) ;
+            border-radius: 16px;
+            >header{
+                border-radius: 16px;
+                background-color:lighten($background, 5%);
+                justify-content: space-around;
+                >img{
+                    height: 156px;
+                    margin-right: 172px;
+                }
+                >button{
+                    background-color: transparent;
+                    border: none;
+                    font-size: 24px;
+                    margin-right: 32px;
+                } 
+            }
+            >main{
+                
+            }
+            >footer{
+                border-radius: 16px;
+                border: none;
+                background-color:lighten($background, 5%) ; 
+            }
+        }
+    }
+}

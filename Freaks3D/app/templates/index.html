@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Freaks3D | Inicio{% endblock  %}
+{% block script %}
+<script defer src="{% static 'js/carousel.js' %}"></script>
+{% endblock %}
+{% block  main %}
+<main id="index">
+  <section>
+  <div>
+    <img src="{% static 'multimedia/fotos/index/indexPresentacion1.jpg'%}" alt="">
+  </div>
+  <div>
+    <img src="{% static 'multimedia/logos/logo_general.png' %}" alt="">
+    <h2>Envios a todo el pais</h2>
+    <p>Despachamos nuestros productos a travez de correo argentino</p>
+  </div>
+  </section>
+  <section>
+      <div>
+        <article>
+          <h2>Personalizables</h2>
+          <div id="mySlider"></div>
+          <div id="sliderNav">
+            <div id="sliderPrev" onclick="prevSlide();"><i class="bi bi-chevron-left"></i></div>
+            <div id="sliderNext" onclick="nextSlide();"><i class="bi bi-chevron-right"></i></div>
+          </div>
+        </article>
+      </div>
+      <div>
+          <h2>Más vendidos</h2>
+          <article></article>
+          <article></article>
+      </div>
+  </section>
+  <section>
+    <h2>Productos</h2>
+    <div>
+      ...
+    </div>
+    <button>
+      Ver más Productos
+    </button>
+  </section>
+  <section>
+    <h2>Filamento</h2>
+    <div>
+      <article>
+        <div>
+          <img src="{%static 'multimedia/fotos/filamentos/3n3-rosa.jpg'%}" alt="">
+        </div>
+        <div>
+          <strong>3N3</strong>
+        </div>
+      </article>
+      <article>
+        <div>
+          <img src={% static 'multimedia/fotos/filamentos/Blanco.jpg' %} alt="">
+        </div>
+        <div>
+          <strong>Grilo3</strong>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+{% endblock  %}

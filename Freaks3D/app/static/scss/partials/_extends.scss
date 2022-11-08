@@ -1,0 +1,17 @@
+@import "../base/var";
+%boton-navbar{
+    background-color: transparent;
+    border: none;
+    font-size: 32px;
+    color: $gray-icons
+}
+%shadows1{
+    box-shadow: 4px 5px 10px 0px darken($background, 10%);
+    -webkit-box-shadow: 4px 5px 10px 0px darken($background, 10%);
+    -moz-box-shadow: 4px 5px 10px 0px darken($background, 10%);
+}
+%shadows2{
+    box-shadow: 1px 3px 12px -2px darken($background, 10%);
+    -webkit-box-shadow: 1px 3px 12px -2px darken($background, 10%);
+    -moz-box-shadow: 1px 3px 12px -2px darken($background, 10%);
+}

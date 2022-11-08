@@ -1,0 +1,17 @@
+#Modal{
+    >div:first-child{
+        background-color: $background
+    }
+    >div:nth-child(2){
+        form{
+            text-align: start;
+            >div{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+    >div:last-child{
+        background-color: yellow;
+    }
+}
