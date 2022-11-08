@@ -1,7 +1,7 @@
 // Obtener referencia al input y a la imagen
 
-const $seleccionArchivos = document.querySelector("#seleccionArchivos"),
-  $imagenPrevisualizacion = document.querySelector("#imagenPrevisualizacion");
+const $seleccionArchivos = document.getElementById("seleccionArchivos")
+const $imagenPrevisualizacion = document.getElementById("imagenPrevisualizacion");
 
 // Escuchar cuando cambie
 $seleccionArchivos.addEventListener("change", () => {
@@ -17,5 +17,6 @@ $seleccionArchivos.addEventListener("change", () => {
   // Lo convertimos a un objeto de tipo objectURL
   const objectURL = URL.createObjectURL(primerArchivo);
   // Y a la fuente de la imagen le ponemos el objectURL
+  $imagenPrevisualizacion.removeAttribute("src")
   $imagenPrevisualizacion.src = objectURL;
 })

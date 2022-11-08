@@ -61,7 +61,7 @@
                 &:hover{
                     background-color: darken($background,15%);
                 }
-                div:first-child{
+                >div:first-child{
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -75,7 +75,7 @@
                         border-radius: 16px;
                     }
                 }
-                div:last-child{
+                >div:last-child{
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -94,32 +94,6 @@
                 }
             }
         }
-        .formulario-modal{
-            background-color: lighten($background, 5%) ;
-            border-radius: 16px;
-            >header{
-                border-radius: 16px;
-                background-color:lighten($background, 5%);
-                justify-content: space-around;
-                >img{
-                    height: 156px;
-                    margin-right: 172px;
-                }
-                >button{
-                    background-color: transparent;
-                    border: none;
-                    font-size: 24px;
-                    margin-right: 32px;
-                } 
-            }
-            >main{
-                
-            }
-            >footer{
-                border-radius: 16px;
-                border: none;
-                background-color:lighten($background, 5%) ; 
-            }
-        }
+        @import "modal";
     }
 }

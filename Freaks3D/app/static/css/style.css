@@ -12,7 +12,7 @@ header > div > button, header > nav > button {
   -moz-box-shadow: 4px 5px 10px 0px #dbdbdb;
 }
 
-.contacto > section > form button, .contacto > section > form > div textarea, .contacto > section > form > div input {
+#personalizables section:nth-child(2) .Modal > div > form > div:not(#personalizables section:nth-child(2) .Modal > div > form > div:first-child) input, .contacto > section > form button, .contacto > section > form > div textarea, .contacto > section > form > div input {
   box-shadow: 1px 3px 12px -2px #dbdbdb;
   -webkit-box-shadow: 1px 3px 12px -2px #dbdbdb;
   -moz-box-shadow: 1px 3px 12px -2px #dbdbdb;
@@ -313,7 +313,7 @@ header > nav > button, header > div > button {
   -moz-box-shadow: 4px 5px 10px 0px #dbdbdb;
 }
 
-.contacto > section > form button, .contacto > section > form > div textarea, .contacto > section > form > div input {
+#personalizables section:nth-child(2) .Modal > div > form > div:not(#personalizables section:nth-child(2) .Modal > div > form > div:first-child) input, .contacto > section > form button, .contacto > section > form > div textarea, .contacto > section > form > div input {
   box-shadow: 1px 3px 12px -2px #dbdbdb;
   -webkit-box-shadow: 1px 3px 12px -2px #dbdbdb;
   -moz-box-shadow: 1px 3px 12px -2px #dbdbdb;
@@ -579,7 +579,7 @@ footer div ul .redes-sociales a svg {
 #personalizables section:nth-child(2) > div > button:hover {
   background-color: #cecece;
 }
-#personalizables section:nth-child(2) > div > button div:first-child {
+#personalizables section:nth-child(2) > div > button > div:first-child {
   position: absolute;
   top: 0;
   left: 0;
@@ -587,13 +587,13 @@ footer div ul .redes-sociales a svg {
   height: 100%;
   opacity: 0.4;
 }
-#personalizables section:nth-child(2) > div > button div:first-child > img {
+#personalizables section:nth-child(2) > div > button > div:first-child > img {
   object-fit: cover;
   width: 100%;
   height: 100%;
   border-radius: 16px;
 }
-#personalizables section:nth-child(2) > div > button div:last-child {
+#personalizables section:nth-child(2) > div > button > div:last-child {
   position: absolute;
   top: 0;
   left: 0;
@@ -605,48 +605,101 @@ footer div ul .redes-sociales a svg {
   align-items: center;
   text-align: center;
 }
-#personalizables section:nth-child(2) > div > button div:last-child strong {
+#personalizables section:nth-child(2) > div > button > div:last-child strong {
   color: #1b1b1b;
   width: 600px;
   font-size: 2.5rem;
 }
-#personalizables section:nth-child(2) .formulario-modal {
-  background-color: white;
-  border-radius: 16px;
+#personalizables section:nth-child(2) .Modal {
+  display: none;
+  border-radius: 8px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: all 0.5s;
+  transform: translateY(-800x);
 }
-#personalizables section:nth-child(2) .formulario-modal > header {
-  border-radius: 16px;
+#personalizables section:nth-child(2) .Modal > div {
+  width: 800px;
+  height: 600px;
   background-color: white;
+  margin: 15% auto;
+}
+#personalizables section:nth-child(2) .Modal > div > div:first-child {
+  display: flex;
+  flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 }
-#personalizables section:nth-child(2) .formulario-modal > header > img {
-  height: 156px;
-  margin-right: 172px;
+#personalizables section:nth-child(2) .Modal > div > div:first-child > img {
+  width: 72px;
 }
-#personalizables section:nth-child(2) .formulario-modal > header > button {
-  background-color: transparent;
-  border: none;
-  font-size: 24px;
-  margin-right: 32px;
+#personalizables section:nth-child(2) .Modal > div > form {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "img input1" "img input2" "img input3";
+  justify-items: start;
+  align-items: flex-start;
 }
-#personalizables section:nth-child(2) .formulario-modal > footer {
-  border-radius: 16px;
-  border: none;
-  background-color: white;
-}
-
-#Modal > div:first-child {
-  background-color: rgb(244, 244, 244);
-}
-#Modal > div:nth-child(2) form {
-  text-align: start;
-}
-#Modal > div:nth-child(2) form > div {
+#personalizables section:nth-child(2) .Modal > div > form > div {
   display: flex;
   flex-direction: column;
 }
-#Modal > div:last-child {
-  background-color: yellow;
+#personalizables section:nth-child(2) .Modal > div > form > div:nth-child(1) {
+  grid-area: img;
+}
+#personalizables section:nth-child(2) .Modal > div > form > div:nth-child(1) > img {
+  width: 300px;
+  height: 465px;
+  object-fit: cover;
+  margin-left: 32px;
+}
+#personalizables section:nth-child(2) .Modal > div > form > div:nth-child(2) {
+  grid-area: input1;
+}
+#personalizables section:nth-child(2) .Modal > div > form > div:nth-child(3) {
+  grid-area: input2;
+}
+#personalizables section:nth-child(2) .Modal > div > form > div:nth-child(4) {
+  grid-area: input3;
+}
+#personalizables section:nth-child(2) .Modal > div > form > div:not(#personalizables section:nth-child(2) .Modal > div > form > div:first-child) {
+  text-align: start;
+}
+#personalizables section:nth-child(2) .Modal > div > form > div:not(#personalizables section:nth-child(2) .Modal > div > form > div:first-child) input {
+  width: 256px;
+  border-radius: 8px;
+  border: 0.5px solid #b4b4b4;
+}
+#personalizables section:nth-child(2) .Modal > div > div:last-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  background-color: white;
+}
+#personalizables section:nth-child(2) .Modal > div > div:last-child > button {
+  width: 128px;
+  height: 48px;
+  transition: all 0.3s;
+  margin: 32px 16px;
+}
+#personalizables section:nth-child(2) .Modal > div > div:last-child > button:first-child {
+  background-color: transparent;
+  border-radius: 16px;
+  border: 1px solid #b4b4b4;
+}
+#personalizables section:nth-child(2) .Modal > div > div:last-child > button:last-child {
+  background-color: #028db0;
+  border-radius: 16px;
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */

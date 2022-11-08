@@ -1,17 +1,97 @@
-#Modal{
-    >div:first-child{
-        background-color: $background
-    }
-    >div:nth-child(2){
-        form{
-            text-align: start;
+.Modal{
+    display: none;
+    // margin: 128px 15%;
+    border-radius: 8px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); ;
+    transition: all .5s;
+    transform: translateY(-800x);
+    >div{
+        width: 800px;
+        height: 600px;
+        background-color: lighten($background, 50%);
+        margin: 15% auto;
+        >div:first-child{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            >img{
+                width: 72px;
+            }
+        }
+        >form{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: repeat(3,1fr);
+            grid-template-areas:
+            'img input1'
+            'img input2'
+            'img input3' ;
+            justify-items: start;
+            align-items: flex-start;
             >div{
                 display: flex;
                 flex-direction: column;
+                &:nth-child(1){
+                    grid-area: img;
+                    >img{
+                        width: 300px;
+                        height: 465px;
+                        object-fit: cover;
+                        margin-left: 32px;
+                    }
+                }
+                &:nth-child(2){
+                    grid-area: input1;
+                }
+                &:nth-child(3){
+                    grid-area: input2;
+                }
+                &:nth-child(4){
+                    grid-area: input3;
+                }
+                &:not(&:first-child){
+                    text-align: start;
+                    input{
+                        width:256px;
+                        border-radius: 8px;
+                        @extend %shadows2;
+                        border: .5px solid darken($background, 25%);
+                    }
+                }
+            }
+        }
+        >div:last-child{
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-items: center;
+            background-color: lighten($background, 50%);
+            >button{
+                width: 128px;
+                height: 48px;
+                transition: all .3s;
+                margin: 32px 16px;
+                &:first-child{
+                    background-color: transparent;
+                    border-radius: 16px;
+                    border: 1px solid darken($background, 25%);
+                }
+                &:last-child{
+                    background-color: $CTA;
+                    border-radius: 16px;
+                    border: none;
+                }
             }
         }
     }
-    >div:last-child{
-        background-color: yellow;
-    }
+
 }
