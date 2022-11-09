@@ -5,26 +5,51 @@ var mate = document.getElementById("mate");
 
 var Modal = document.getElementById("Modal");
 
-// var span = document.getElementsById("closeModal")[0];
+var close = document.getElementById("close");
+var cancelar = document.getElementById("cancelar");
 
-// When the user clicks on the button, open the modal
 llavero.onclick = function() {
   Modal.style.display = "block";
+  Modal.classList.add("open")
   var tipo = document.getElementById("tipo")
   tipo.setAttribute("value","Llavero")
+  
 }
 
-// When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
+luna.onclick = function() {
+  Modal.style.display = "block";
+  Modal.classList.add("open")
+  var tipo = document.getElementById("tipo")
+  tipo.setAttribute("value","Luna")
+  
+}
 
-// When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
+mate.onclick = function() {
+  Modal.style.display = "block";
+  Modal.classList.add("open")
+  var tipo = document.getElementById("tipo")
+  tipo.setAttribute("value","Mate")
+  
+}
+
+
+close.onclick = function() {
+  Modal.style.display = "none";
+  Modal.classList.remove("open")
+}
+
+cancelar.onclick = function() {
+  Modal.style.display = "none";
+  Modal.classList.remove("open")
+}
+
+
+window.onclick = function(event) {
+  if (event.target == Modal) {
+    Modal.style.display = "none";
+    Modal.classList.remove("open")
+  }
+}
 
 
 

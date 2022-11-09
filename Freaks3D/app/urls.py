@@ -1,5 +1,4 @@
-from django.contrib import admin
-from django.urls import path
+
 """Freaks3D URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,12 +14,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.urls import path
 from django.contrib import admin
 from .views import inicio,productos,contacto,personalizables
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',inicio, name='inicio'),
+    path('', inicio,name='inicio'),
     path('productos/', productos,name='productos'),
     path('contacto/', contacto,name='contacto'),
     path('personalizables/', personalizables,name='personalizables'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

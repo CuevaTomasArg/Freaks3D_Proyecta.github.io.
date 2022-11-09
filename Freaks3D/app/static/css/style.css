@@ -612,24 +612,30 @@ footer div ul .redes-sociales a svg {
 }
 #personalizables section:nth-child(2) .Modal {
   display: none;
-  border-radius: 8px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
   transition: all 0.5s;
-  transform: translateY(-800x);
+}
+#personalizables section:nth-child(2) .Modal.open {
+  animation: abrir 0.5s;
+  animation-fill-mode: forwards;
+}
+#personalizables section:nth-child(2) .Modal.close {
+  animation: cerrar 0.5s;
+  animation-fill-mode: forwards;
 }
 #personalizables section:nth-child(2) .Modal > div {
   width: 800px;
   height: 600px;
   background-color: white;
-  margin: 15% auto;
+  margin: 5% auto;
 }
 #personalizables section:nth-child(2) .Modal > div > div:first-child {
   display: flex;
@@ -639,6 +645,10 @@ footer div ul .redes-sociales a svg {
 }
 #personalizables section:nth-child(2) .Modal > div > div:first-child > img {
   width: 72px;
+}
+#personalizables section:nth-child(2) .Modal > div > div:first-child #close {
+  cursor: pointer;
+  font-size: 64px;
 }
 #personalizables section:nth-child(2) .Modal > div > form {
   display: grid;
@@ -656,8 +666,8 @@ footer div ul .redes-sociales a svg {
   grid-area: img;
 }
 #personalizables section:nth-child(2) .Modal > div > form > div:nth-child(1) > img {
-  width: 300px;
-  height: 465px;
+  width: 500px;
+  height: 500px;
   object-fit: cover;
   margin-left: 32px;
 }
@@ -672,6 +682,7 @@ footer div ul .redes-sociales a svg {
 }
 #personalizables section:nth-child(2) .Modal > div > form > div:not(#personalizables section:nth-child(2) .Modal > div > form > div:first-child) {
   text-align: start;
+  margin-left: 16px;
 }
 #personalizables section:nth-child(2) .Modal > div > form > div:not(#personalizables section:nth-child(2) .Modal > div > form > div:first-child) input {
   width: 256px;
@@ -700,6 +711,22 @@ footer div ul .redes-sociales a svg {
   background-color: #028db0;
   border-radius: 16px;
   border: none;
+}
+@keyframes abrir {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes cerrar {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
